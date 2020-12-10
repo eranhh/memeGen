@@ -7,22 +7,22 @@
 
 @font-face {
     font-family: euro;
-    src: url(/fonts/eurof55.ttf);
+    src: url(../fonts/eurof55.ttf);
 }
 
 @font-face {
     font-family: nerko;
-    src: url(/fonts/NerkoOne-Regular.ttf);
+    src: url(../fonts/NerkoOne-Regular.ttf);
 }
 
 @font-face {
     font-family: passion;
-    src: url(/fonts/PassionOne-Regular.ttf);
+    src: url(../fonts/PassionOne-Regular.ttf);
 }
 
 @font-face {
     font-family: dodko;
-    src: url(/fonts/EastSeaDokdo-Regular.ttf);
+    src: url(../fonts/EastSeaDokdo-Regular.ttf);
 }
 
 
