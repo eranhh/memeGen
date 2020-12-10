@@ -69,20 +69,26 @@ var gImgs = [{
 ];
 
 var gMeme = {
-    selectedImgId: 4,
+    selectedImgId: 0,
     selectedLineIdx: 0,
 
     lines: [{
         txt: '',
-        size: 18,
+        size: 32,
         align: 'left',
-        color: 'black'
+        color: 'white',
+        stroke: 'black',
+        font: 'Impact'
     }, {
-        txt: 'I love chocolate',
-        size: 18,
+        txt: '',
+        size: 32,
         align: 'left',
-        color: 'black'
+        color: 'white',
+        stroke: 'black',
+        font: 'Impact'
     }]
 }
 
-// console.log(gMeme.lines[gMeme.selectedLineIdx].txt)
+function setMemeImg(img) {
+    gMeme.selectedImgId = img
+}
