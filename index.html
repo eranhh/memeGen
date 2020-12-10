@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Meme Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="misc/favicon.ico" type="image/x-icon">
+</head>
+
+<body onload="init()">
+    <Header>
+        <div class="flex header-layout main-layout">
+            <div class="logo flex align-center">MeMuse~</div>
+            <ul class="main-nav align-center justify-center clean-list ">
+                <li><a href="#gallery" onclick="displayGallery()" class="gallery-link">Gallery</a></li>
+                <li><a href="#editor" onclick="displayEditor()" class="editor-link">Editor</a></li>
+                <li><a href="#memes" onclick="displayMemes()" class="memes-link">Memes</a></li>
+            </ul>
+            <button class="menu-btn" onclick="onOpenMenu()">☰</button>
+        </div>
+    </Header>
+    <main>
+        <div class="main-screen" onclick="onOpenMenu()"></div>
+
+        <section id="gallery" class="gallery-section">
+            <div class="gallery-container">
+                <p class="keywords-bar">smart funny awkward angry happy kids more... </p>
+                <div class="gallery-images"></div>
+            </div>
+        </section>
+
+        <section id="editor" class="editor-section">
+            <div class="flex-container">
+
+                <div class="canvas-container">
+                    <canvas id="my-canvas" height="500" width="500"></canvas>
+                </div>
+
+                <div class="editor-container">
+                    <label for="text-fill">Text:</label>
+                    <input placeholder="Enter Text Here" class="text-fill" type="text" id="text-fill" onchange="draw(event)" oninput="onSetText(this.value),draw(event)" name="text" value="">
+                </div>
+            </div>
+        </section>
+        <section id="memes" class="memes-section">
+            <div class="memes-container"></div>
+            i am the memes section</section>
+        <footer>
+            <div class="logo flex align-center">MeMuse~</div>
+            <p>Cookierites@2020</p>
+        </footer>
+    </main>
+    <script src="js/canvas-utils.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/canvas-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/canvas-controller.js"></script>
+    <script src="js/display-controller.js"></script>
+
+</body>
+
+</html>
