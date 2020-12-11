@@ -10,7 +10,7 @@ function init() {
 function renderGallery() {
     var imgs = gImgs
     var strHtmls = imgs.map(function(img) {
-        return `<a href="#editor"><img src="img/${img.id}.jpg" onclick="setMemeImg('${img.id}'),drawMemeToCanvas(), displayEditor()"></a>`
+        return `<a href="#editor"><img src="img/${img.id}.jpg" onclick="onSetMemeImg('${img.id}'), displayEditor()"></a>`
     });
     document.querySelector('.gallery-images').innerHTML = strHtmls.join('')
 }

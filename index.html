@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Meme Generator</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="misc/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="misc/faviconmemes.ico" type="image/x-icon">
 </head>
 
 <body onload="init()">
@@ -39,37 +39,57 @@
                 </div>
 
                 <div class="editor-container">
-                    <label for="text-fill">Text:</label>
-                    <input placeholder="Enter Text Here" autocomplete="off" class="text-fill" type="text" id="text-fill" onchange="draw(event)" oninput="onSetText(this.value),drawMemeToCanvas()" name="text" value="">
-                    <div>
-                        <button class="btn-editor" onclick="onAddLine()"><img class="icon" src="icons/add.png"></button>
-                        <button class="btn-editor" onclick="onClearText()"><img class="icon" src="icons/trash.png"></button>
-                        <!-- <button class="btn-editor" onclick="onMoveToLine()"><img class="icon"
-                            src="icons/up-and-down.png"></button> -->
-
-                        <button class="btn-editor" onclick="onChangeFeature('right','align')"><img class="icon"
-                            src="icons/align-to-left.png"></button>
-                        <button class="btn-editor" onclick="onChangeFeature('center','align')"><img class="icon"
-                            src="icons/center-text-alignment.png"></button>
-                        <button class="btn-editor" onclick="onChangeFeature('left','align')"><img class="icon"
-                            src="icons/align-to-right.png"></button>
-                        <button class="btn-editor" onclick="onChangeFeature(+10,'fontSize')"><img class="icon"
-                            src="icons/increase-font-icon.png"></button>
-                        <button class="btn-editor" onclick="onChangeFeature(-10,'fontSize')"><img class="icon"
-                            src="icons/decrease-font-icon.png"></button>
+                    <input placeholder="Enter Text Here" autocomplete="off" class="text-input" type="text" id="text-input" oninput="onSetText(this.value)" name="text-input" value=""></input>
+                    <div class="btns-sect1">
+                        <button title="Add another line below" class="btn-editor" onclick="onAddLine()"><img class="editor-icon" src="icons/add.png"></button>
+                        <button title="Clear current line" class="btn-editor" onclick="onClearText()"><img class="editor-icon" src="icons/trash.png"></button>
+                        <button title="Go to bottom/top line" class="btn-editor" onclick="onSwitchZone()"><img class="editor-icon"
+                            src="icons/up-and-down-arrows.png"></button>
+                        <button title="move line upwards" class="btn-editor" onclick="onMoveLine(-1)"><img class="editor-icon"
+                            src="icons/double-arrow-up.png"></button>
+                        <button title="Move line downwards" class="btn-editor" onclick="onMoveLine(+1)"><img class="editor-icon"
+                            src="icons/double-arrow-down.png"></button>
+                        <button title="Go to previous line" class="btn-editor" onclick="goToPrevLine()"><img class="editor-icon"
+                                src="icons/backwards-arrow.png"></button>
+                        <button title="Go to next line" class="btn-editor" onclick="goToNextLine()"><img class="editor-icon"
+                            src="icons/forwards-arrow.png"></button>
                     </div>
-                    <select class="select-input" oninput="onChangeFeature(this.value , 'font' )" name="curser" id="curser">
+                    <div class="btns-sect2">
+                        <button title="Align line to right" class="btn-editor" onclick="onChangeAlign('left')"><img class="editor-icon"
+                            src="icons/align-to-left.png"></button>
+                        <button title="Align line to center" class="btn-editor" onclick="onChangeAlign('center')"><img class="editor-icon"
+                            src="icons/center-text-alignment.png"></button>
+                        <button title="Align line to left" class="btn-editor" onclick="onChangeAlign('right')"><img class="editor-icon"
+                            src="icons/align-to-right.png"></button>
+                        <button title="Increase font size" class="btn-editor" onclick="onChangeFontSize(+2)"><img class="editor-icon"
+                            src="icons/increase-font.png"></button>
+                        <button title="Decrease font size" class="btn-editor" onclick="onChangeFontSize(-2)"><img class="editor-icon"
+                            src="icons/decrease-font.png"></button>
+                        <button title="Set text outline color" class="btn-editor color-btn"><input oninput="onChangeStrokeColor(this.value)"id="stroke-color" name="stroke-color" class="input-color btn-editor" type=color></input><label for="stroke-color"><img class="editor-icon" src="icons/text-stroke.png"></label></button>
+                        <button title="Set text color" class="btn-editor color-btn"><input oninput="onChangeFillColor(this.value)" id="fill-color" name="fill-color" class="input-color btn-editor" type=color onclick=""></input><label for="fill-color"><img class="editor-icon" src="icons/paint-board.png"></label></button>
+                        <br>
+                        <br>
+                        <select title="Select font type" id="font-selector" class="font-input" oninput="onChangeFontType(this.value)" name="font-selector">
                         <option value="Impact">Impact</option>
                         <option value="Arial">Arial</option>
-                        <option value="Geneva">Geneva</option>
                         <option value="Cursive">Cursive</option>
-                    </select>
+                        <option value="dodko">Dodko</option>
+                        <option value="Nerko">Nerko</option>
+                        <option value="Passion">Passion</option>
+                        </select>
+                        <button onclick="onClearAll()">Clear All</button>
+                    </div>
+                    <div class="btns-sect3">
+                        <button onclick="onSaveMeme()">Save to page</button>
+                        <button onclick="onPublish()">Share</button>
+                        <button onclick="onDownload()">Download</button>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="memes" class="memes-section">
             <div class="memes-container"></div>
-            i am the memes section</section>
+            I am the memes section</section>
         <footer>
             <div class="logo flex align-center">MeMuse~</div>
             <p>Cookierites@2020</p>
