@@ -11,7 +11,6 @@ function renderMemeToCanvas() {
     }
 }
 
-
 function drawText(text, x, y) {
     gCtx.lineWidth = '1.5'
     gCtx.strokeStyle = gMeme.lines[gMeme.currLineIdx].stroke
@@ -104,9 +103,9 @@ function onClearAll() {
     textInput.value = gMeme.lines[gMeme.currLineIdx].txt
 }
 
-
-
-
+function onDownload(elLink) {
+    downloadCanvas(elLink)
+}
 
 
 

@@ -158,7 +158,7 @@ header .logo {
 footer {
     background-color: blanchedalmond;
     text-align: center;
-    height: 150px;
+    height: 100%;
 }
 
 footer p {
@@ -269,4 +269,9 @@ select {
 
 .btns-sect3 {
     margin-bottom: 10px;
+}
+
+.href-btn a {
+    color: inherit;
+    text-decoration: none;
 }

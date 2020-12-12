@@ -1,11 +1,26 @@
 'use strict'
-
+var gCanvas;
+var gCtx;
 var gGalleryShow = document.querySelector('.gallery-section')
 var gMemesShow = document.querySelector('.memes-section')
 var gEditorShow = document.querySelector('.editor-section')
 var gGalleryLink = document.querySelector('.gallery-link')
 var gMemesLink = document.querySelector('.memes-link')
 var gEditorLink = document.querySelector('.editor-link')
+
+function init() {
+    gCanvas = document.getElementById('my-canvas')
+    gCtx = gCanvas.getContext('2d')
+    renderGallery()
+}
+
+function renderGallery() {
+    var imgs = gImgs
+    var strHtmls = imgs.map(function(img) {
+        return `<a href="#editor"><img src="img/${img.id}.jpg" onclick="onSetMemeImg('${img.id}'), displayEditor()"></a>`
+    });
+    document.querySelector('.gallery-images').innerHTML = strHtmls.join('')
+}
 
 function displayEditor() {
     gGalleryShow.style.display = 'none'
