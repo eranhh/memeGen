@@ -75,7 +75,7 @@ canvas {
     border: 1px solid silver;
     background-color: rgb(248, 242, 233);
     border-radius: 0.2rem;
-    box-shadow: 0px 4px 10px 0px rgba(50, 50, 50, 0.4);
+    /* box-shadow: 0px 4px 10px 0px rgba(50, 50, 50, 0.4); */
 }
 
 .editor-icon {
@@ -285,6 +285,7 @@ select {
     font-weight: bold;
     font-size: 1.2rem;
     color: rgb(75, 75, 75);
+    padding: 7px;
 }
 
 .btns-sect3 button:hover {
