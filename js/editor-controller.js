@@ -17,13 +17,8 @@ function drawText(text, x, y) {
     gCtx.fillStyle = gMeme.lines[gMeme.currLineIdx].color
     gCtx.font = `${gMeme.lines[gMeme.currLineIdx].size}px ${gMeme.lines[gMeme.currLineIdx].font}`
     gCtx.textAlign = gMeme.lines[gMeme.currLineIdx].align
-        // gCtx.measureText(text, x, y)
-    if (gCtx.isPointInPath(x, y)) {
-        text.focus();
-    }
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
-
 }
 
 function onSetText() {
@@ -78,6 +73,7 @@ function onAddLine() {
     renderMemeToCanvas()
     var textInput = document.querySelector('#text-input')
     textInput.value = gMeme.lines[gMeme.currLineIdx].txt
+    gTextInput.focus()
 }
 
 function onSwitchZone() {
@@ -85,6 +81,7 @@ function onSwitchZone() {
     renderMemeToCanvas()
     var textInput = document.querySelector('#text-input')
     textInput.value = gMeme.lines[gMeme.currLineIdx].txt
+    gTextInput.focus()
 }
 
 function goToPrevLine() {
@@ -92,6 +89,7 @@ function goToPrevLine() {
     renderMemeToCanvas()
     var textInput = document.querySelector('#text-input')
     textInput.value = gMeme.lines[gMeme.currLineIdx].txt
+    gTextInput.focus()
 }
 
 function goToNextLine() {
@@ -99,6 +97,7 @@ function goToNextLine() {
     renderMemeToCanvas()
     var textInput = document.querySelector('#text-input')
     textInput.value = gMeme.lines[gMeme.currLineIdx].txt
+    gTextInput.focus()
 }
 
 function onClearAll() {
@@ -113,7 +112,6 @@ function onClearAll() {
 function onDownload(elLink) {
     downloadCanvas(elLink)
 }
-
 
 
 

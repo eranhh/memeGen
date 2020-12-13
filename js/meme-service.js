@@ -24,7 +24,7 @@ var gMeme = {
         stroke: 'black',
         font: 'Impact',
         x: 250,
-        y: 400,
+        y: 430,
     }]
 }
 

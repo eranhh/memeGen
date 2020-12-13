@@ -28,7 +28,7 @@
             <section id="gallery" class="gallery-section">
                 <div class="gallery-container">
                     <div class="filtering-sect">
-                        <button class="show-all-btn" onclick="onSetFilter('All')">Show All Pics</button>
+                        <button class="show-all-btn" onclick="onSetFilter('All')">Show All</button>
                         <div class="keywords-bar" style="display: inline"></div><button class="filters-display-btn" onclick="onDisplayFilters()">More...</button>
                     </div>
                     <div class="gallery-images"></div>
@@ -46,7 +46,7 @@
                             <button title="Clear current line" class="btn-editor" onclick="onClearText()"><img class="editor-icon" src="Icons/trash.png"></button>
                             <button title="Go to bottom/top line" class="btn-editor" onclick="onSwitchZone()"><img class="editor-icon"
                             src="Icons/up-and-down-arrows.png"></button>
-                            <button title="move line upwards" class="btn-editor" onclick="onMoveLine(-1)"><img class="editor-icon"
+                            <button title="Move line upwards" class="btn-editor" onclick="onMoveLine(-1)"><img class="editor-icon"
                             src="Icons/double-arrow-up.png"></button>
                             <button title="Move line downwards" class="btn-editor" onclick="onMoveLine(+1)"><img class="editor-icon"
                             src="Icons/double-arrow-down.png"></button>
@@ -71,14 +71,14 @@
                         </div>
                         <div class="btns-sect3">
                             <select title="Select font type" id="font-selector" class="font-input" oninput="onChangeFontType(this.value)" name="font-selector">
-                        <option value="Impact">Impact</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Cursive">Cursive</option>
-                        <option value="dodko">Dodko</option>
-                        <option value="Nerko">Nerko</option>
-                        <option value="Passion">Passion</option>
-                        </select>
-                            <button titel="Clear all text!" onclick="onClearAll()">Clear All</button>
+                                <option value="Impact">Impact</option>
+                                <option value="Arial">Arial</option>
+                                <option value="Cursive">Cursive</option>
+                                <option value="dodko">Dodko</option>
+                                <option value="Nerko">Nerko</option>
+                                <option value="Passion">Passion</option>
+                            </select>
+                            <button title="Clear all text" onclick="onClearAll()">Clear All</button>
                         </div>
                         <div class="btns-sect4">
                             <button class="href-btn"><a href="#" onclick="onDownload(this)" download="">Download</a></button>
@@ -93,7 +93,6 @@
                 <h1>Here are the memes you created...</h1>
             </section>
         </div>
-
     </main>
     <footer>
         <div class="logo flex align-center">MeMuse~</div>
@@ -103,6 +102,7 @@
     <script src="js/canvas-utils.js"></script>
     <script src="js/main-service.js"></script>
     <script src="js/meme-service.js"></script>
+    <script src="js/upload-service.js"></script>
     <script src="js/main-controller.js"></script>
     <script src="js/editor-controller.js"></script>
 

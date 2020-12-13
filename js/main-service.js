@@ -6,15 +6,15 @@ var gKeywordsFullDisplay = false;
 
 var gKeywords = [
     { keyword: 'smart', count: 6, },
-    { keyword: 'funny', count: 8, },
-    { keyword: 'angry', count: 2, },
+    { keyword: 'funny', count: 7, },
+    { keyword: 'angry', count: 3, },
     { keyword: 'happy', count: 7, },
     { keyword: 'kids', count: 4, },
     { keyword: 'movies', count: 6, },
     { keyword: 'animals', count: 3, },
     { keyword: 'success', count: 3, },
     { keyword: 'political', count: 3, },
-    { keyword: 'mean', count: 5, },
+    { keyword: 'mean', count: 4, },
     { keyword: 'cute', count: 4, },
     { keyword: 'crazy', count: 6 }
 ]
@@ -49,11 +49,11 @@ var gImgs = [{
     },
     {
         id: 8,
-        keywords: ['funny', 'movies', 'smart', 'mean', 'crazy']
+        keywords: ['movies', 'smart', 'mean', 'crazy']
     },
     {
         id: 9,
-        keywords: ['funny', 'kids', 'mean', 'success', 'crazy']
+        keywords: ['funny', 'kids', 'mean', 'success', 'crazy', 'happy']
     },
     {
         id: 10,
@@ -65,7 +65,7 @@ var gImgs = [{
     },
     {
         id: 12,
-        keywords: ['mean', 'smart', 'movies']
+        keywords: ['smart', 'movies', 'angry']
     },
     {
         id: 13,

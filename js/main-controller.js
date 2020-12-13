@@ -6,6 +6,7 @@ var gEditorShow = document.querySelector('.editor-section')
 var gGalleryLink = document.querySelector('.gallery-link')
 var gMemesLink = document.querySelector('.memes-link')
 var gEditorLink = document.querySelector('.editor-link')
+var gTextInput = document.querySelector('input[name=text-input]')
 
 function init() {
     gCanvas = document.getElementById('my-canvas')
@@ -22,6 +23,7 @@ function displayEditor() {
     gGalleryLink.style.color = 'whitesmoke';
     gMemesLink.style.color = 'whitesmoke';
     gEditorLink.style.color = '#ebce70';
+    gTextInput.focus()
 }
 
 function displayGallery() {
@@ -53,8 +55,8 @@ function renderGallery() {
 function renderKeywords() {
     var keywords = keywordsToDisplay()
     var strHtmls = keywords.map(function(keyword) {
-        var initialSize = 25 + keyword.count
-        return `<button style="font-size:${initialSize}px;" class="filter-btn ${keyword.keyword}" onclick="onSetFilter('${keyword.keyword}'),onIncreaseFontSize('${keyword.keyword}')">${keyword.keyword}</button>`;
+        var initialSize = 21 + keyword.count
+        return `<button style="font-size:${initialSize}px;" class="filter-btn ${keyword.keyword}" onclick="onSetFilter('${keyword.keyword}'),onIncreaseKeyFontSize('${keyword.keyword}')">${keyword.keyword}</button>`;
     })
     document.querySelector('.keywords-bar').innerHTML = strHtmls.join('')
 }
@@ -64,7 +66,7 @@ function onSetFilter(filterBy) {
     renderGallery();
 }
 
-function onIncreaseFontSize(txt) {
+function onIncreaseKeyFontSize(txt) {
     var keyIdx = gKeywords.findIndex(idx => idx.keyword === txt);
     gKeywords[keyIdx].count++;
     renderKeywords()
@@ -82,11 +84,27 @@ function onDisplayFilters() {
     renderKeywords()
 }
 
-function onOpenMenu() {
-    var elMenu = document.body.classList.toggle('menu-bar')
-    if (elMenu) {
-        document.querySelector('.menu-btn').innerText = 'X'
-    } else {
-        document.querySelector('.menu-btn').innerText = '☰'
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function onOpenMenu() {
+//     var elMenu = document.body.classList.toggle('menu-bar')
+//     if (elMenu) {
+//         document.querySelector('.menu-btn').innerText = 'X'
+//     } else {
+//         document.querySelector('.menu-btn').innerText = '☰'
+//     }
+// }
