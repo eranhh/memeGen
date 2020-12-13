@@ -325,6 +325,10 @@ select {
     text-decoration: none;
 }
 
+.filtering-sect {
+    display: flex;
+}
+
 .filter-btn {
     border: none;
     background-color: #fffbe9;
@@ -336,16 +340,13 @@ select {
     outline: none;
 }
 
-.filtering-sect {
-    display: flex;
-}
-
 .show-all-btn {
+    text-align: left;
     color: rgb(64, 132, 149);
     border: none;
     background-color: #fffbe9;
     font-family: nerko;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-style: italic;
 }
 
@@ -397,7 +398,7 @@ select {
 
 @media (max-width: 980px) {
     .main-layout {
-        max-width: 760px;
+        max-width: 780px;
     }
     .flex-container {
         flex-direction: column;
@@ -412,11 +413,14 @@ select {
 
 @media (max-width: 760px) {
     .main-layout {
-        max-width: 670px;
+        max-width: 720px;
     }
     .gallery-images img {
         height: 350px;
         width: 350px;
+    }
+    .filtering-sect {
+        flex-direction: column;
     }
     /*   
     footer {
