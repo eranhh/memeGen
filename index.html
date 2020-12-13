@@ -10,66 +10,68 @@
 </head>
 
 <body onload="init()">
+    <div class="main-screen" onclick="onOpenMenu()"></div>
     <Header>
-        <div class="flex header-layout main-layout">
+        <div class="flex header-layout">
             <div class="logo flex align-center">MeMuse~</div>
-            <ul class="main-nav align-center justify-center clean-list ">
-                <li><a href="#gallery" onclick="displayGallery()" class="gallery-link">Gallery</a></li>
-                <li><a href="#editor" onclick="displayEditor()" class="editor-link">Editor</a></li>
-                <li><a href="#memes" onclick="displayMemes()" class="memes-link">Memes</a></li>
+            <ul class="main-nav align-center space-between justify-center clean-list ">
+                <li><a href="#gallery" onclick="displayGallery(); return false" class="gallery-link">Gallery</a></li>
+                <li><a href="#editor" onclick="displayEditor();return false" class="editor-link">Editor</a></li>
+                <li><a href="#memes" onclick="displayMemes();return false" class="memes-link">Memes</a></li>
             </ul>
             <button class="menu-btn" onclick="onOpenMenu()">☰</button>
         </div>
     </Header>
-    <main>
-        <div class="main-screen" onclick="onOpenMenu()"></div>
-
-        <section id="gallery" class="gallery-section">
-            <div class="gallery-container">
-                <p class="keywords-bar">smart funny awkward angry happy kids more... </p>
-                <div class="gallery-images"></div>
-            </div>
-        </section>
-
-        <section id="editor" class="editor-section">
-            <div class="flex-container">
-
-                <div class="canvas-container">
-                    <canvas id="my-canvas" height="500" width="500"></canvas>
-                </div>
-
-                <div class="editor-container">
-                    <input placeholder="Enter Text Here" autocomplete="off" class="text-input" type="text" id="text-input" oninput="onSetText(this.value)" name="text-input" value=""></input>
-                    <div class="btns-sect1">
-                        <button title="Add another line below" class="btn-editor" onclick="onAddLine()"><img class="editor-icon" src=".//icons/add.png"></button>
-                        <button title="Clear current line" class="btn-editor" onclick="onClearText()"><img class="editor-icon" src=".//icons/trash.png"></button>
-                        <button title="Go to bottom/top line" class="btn-editor" onclick="onSwitchZone()"><img class="editor-icon"
-                            src=".//icons/up-and-down-arrows.png"></button>
-                        <button title="move line upwards" class="btn-editor" onclick="onMoveLine(-1)"><img class="editor-icon"
-                            src=".//icons/double-arrow-up.png"></button>
-                        <button title="Move line downwards" class="btn-editor" onclick="onMoveLine(+1)"><img class="editor-icon"
-                            src=".//icons/double-arrow-down.png"></button>
-                        <button title="Go to previous line" class="btn-editor" onclick="goToPrevLine()"><img class="editor-icon"
-                                src=".//icons/backwards-arrow.png"></button>
-                        <button title="Go to next line" class="btn-editor" onclick="goToNextLine()"><img class="editor-icon"
-                            src=".//icons/forwards-arrow.png"></button>
+    <main class="main-layout">
+        <div class="wrapper">
+            <div class="main-screen" onclick="onOpenMenu()"></div>
+            <section id="gallery" class="gallery-section">
+                <div class="gallery-container">
+                    <div class="filtering-sect">
+                        <button class="show-all-btn" onclick="onSetFilter('All')">Show All</button>
+                        <div class="keywords-bar"></div>
+                        <div><button class="filters-display-btn" onclick="onDisplayFilters()">More...</button></div>
                     </div>
-                    <div class="btns-sect2">
-                        <button title="Align line to right" class="btn-editor" onclick="onChangeAlign('left')"><img class="editor-icon"
+                    <div class="gallery-images"></div>
+                </div>
+            </section>
+            <section id="editor" class="editor-section ">
+                <div class="flex-container">
+                    <div class="canvas-container">
+                        <canvas id="my-canvas" height="500" width="500"></canvas>
+                    </div>
+                    <div class="editor-container">
+                        <input placeholder="Enter Text Here" autocomplete="off" class="text-input" type="text" id="text-input" oninput="onSetText(this.value)" name="text-input" value=""></input>
+                        <div class="btns-sect1">
+                            <button title="Add another line below" class="btn-editor" onclick="onAddLine()"><img class="editor-icon" src=".//icons/add.png"></button>
+                            <button title="Clear current line" class="btn-editor" onclick="onClearText()"><img class="editor-icon" src=".//icons/trash.png"></button>
+                            <button title="Go to bottom/top line" class="btn-editor" onclick="onSwitchZone()"><img class="editor-icon"
+                            src=".//icons/up-and-down-arrows.png"></button>
+                            <button title="move line upwards" class="btn-editor" onclick="onMoveLine(-1)"><img class="editor-icon"
+                            src=".//icons/double-arrow-up.png"></button>
+                            <button title="Move line downwards" class="btn-editor" onclick="onMoveLine(+1)"><img class="editor-icon"
+                            src=".//icons/double-arrow-down.png"></button>
+                            <button title="Go to previous line" class="btn-editor" onclick="goToPrevLine()"><img class="editor-icon"
+                                src=".//icons/backwards-arrow.png"></button>
+                            <button title="Go to next line" class="btn-editor" onclick="goToNextLine()"><img class="editor-icon"
+                            src=".//icons/forwards-arrow.png"></button>
+                        </div>
+                        <div class="btns-sect2">
+                            <button title="Align line to right" class="btn-editor" onclick="onChangeAlign('left')"><img class="editor-icon"
                             src=".//icons/align-to-left.png"></button>
-                        <button title="Align line to center" class="btn-editor" onclick="onChangeAlign('center')"><img class="editor-icon"
+                            <button title="Align line to center" class="btn-editor" onclick="onChangeAlign('center')"><img class="editor-icon"
                             src=".//icons/center-text-alignment.png"></button>
-                        <button title="Align line to left" class="btn-editor" onclick="onChangeAlign('right')"><img class="editor-icon"
+                            <button title="Align line to left" class="btn-editor" onclick="onChangeAlign('right')"><img class="editor-icon"
                             src=".//icons/align-to-right.png"></button>
-                        <button title="Increase font size" class="btn-editor" onclick="onChangeFontSize(+2)"><img class="editor-icon"
+                            <button title="Increase font size" class="btn-editor" onclick="onChangeFontSize(+2)"><img class="editor-icon"
                             src=".//icons/increase-font.png"></button>
-                        <button title="Decrease font size" class="btn-editor" onclick="onChangeFontSize(-2)"><img class="editor-icon"
+                            <button title="Decrease font size" class="btn-editor" onclick="onChangeFontSize(-2)"><img class="editor-icon"
                             src=".//icons/decrease-font.png"></button>
-                        <button title="Set text outline color" class="btn-editor color-btn"><input oninput="onChangeStrokeColor(this.value)"id="stroke-color" name="stroke-color" class="input-color btn-editor" type=color></input><label for="stroke-color"><img class="editor-icon" src=".//icons/text-stroke.png"></label></button>
-                        <button title="Set text color" class="btn-editor color-btn"><input oninput="onChangeFillColor(this.value)" id="fill-color" name="fill-color" class="input-color btn-editor" type=color onclick=""></input><label for="fill-color"><img class="editor-icon" src=".//icons/paint-board.png"></label></button>
-                        <br>
-                        <br>
-                        <select title="Select font type" id="font-selector" class="font-input" oninput="onChangeFontType(this.value)" name="font-selector">
+                            <button title="Set text outline color" class="btn-editor color-btn"><input oninput="onChangeStrokeColor(this.value)"id="stroke-color" name="stroke-color" class="input-color btn-editor" type=color></input><label for="stroke-color"><img class="editor-icon" src=".//icons/text-stroke.png"></label></button>
+                            <button title="Set text color" class="btn-editor color-btn"><input oninput="onChangeFillColor(this.value)" id="fill-color" name="fill-color" class="input-color btn-editor" type=color onclick=""></input><label for="fill-color"><img class="editor-icon" src=".//icons/paint-board.png"></label></button>
+                        </div>
+                        <div class="btns-sect3">
+                            <select title="Select font type" id="font-selector" class="font-input" oninput="onChangeFontType(this.value)" name="font-selector">
                         <option value="Impact">Impact</option>
                         <option value="Arial">Arial</option>
                         <option value="Cursive">Cursive</option>
@@ -77,26 +79,30 @@
                         <option value="Nerko">Nerko</option>
                         <option value="Passion">Passion</option>
                         </select>
-                        <button onclick="onClearAll()">Clear All</button>
-                    </div>
-                    <div class="btns-sect3">
-                        <button onclick="onSaveMeme()">Save to page</button>
-                        <button>Share</button>
-                        <button class="href-btn"><a href="#" onclick="onDownload(this)" download="">Download</a></button>
+                            <button titel="Clear all text!" onclick="onClearAll()">Clear All</button>
+                        </div>
+                        <div class="btns-sect4">
+                            <button class="href-btn"><a href="#" onclick="onDownload(this)" download="">Download</a></button>
+                            <button title="Display on Memes page" onclick="onSaveMeme()">Save</button>
+                            <button title="Post on Facebook">Share</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="memes" class="memes-section">
-            <div class="memes-container"></div>
-            I am the memes section</section>
-        <footer>
-            <div class="logo flex align-center">MeMuse~</div>
-            <p>Cookierites@2020</p>
-        </footer>
+            </section>
+            <section id="memes" class="memes-section">
+                <div class="memes-container"></div>
+                <h1>Here are the memes you created...</h1>
+            </section>
+        </div>
+
     </main>
+    <footer>
+        <div class="logo flex align-center">MeMuse~</div>
+        <p>Cookierites@2020</p>
+    </footer>
 
     <script src="js/canvas-utils.js"></script>
+    <script src="js/main-service.js"></script>
     <script src="js/meme-service.js"></script>
     <script src="js/main-controller.js"></script>
     <script src="js/editor-controller.js"></script>

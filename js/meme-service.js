@@ -1,72 +1,7 @@
 'use strict'
 
-var gKeywords = { 'smart': 6, 'funny': 8, 'angry': 3, 'happy': 7, 'kids': 4, 'movies': 6, 'animals': 3, 'success': 3, 'political': 3, 'mean': 3, 'cute': 4 }
-
-var gImgs = [{
-        id: 1,
-        keywords: ['angry', 'political', 'funny', 'mean']
-    },
-    {
-        id: 2,
-        keywords: ['happy', 'cute', 'animals']
-    },
-    {
-        id: 3,
-        keywords: ['happy', 'cute', 'kids', 'animals']
-    },
-    {
-        id: 4,
-        keywords: ['cute', 'animals']
-    },
-    {
-        id: 5,
-        keywords: ['happy', 'funny', 'success', 'kids']
-    },
-    {
-        id: 6,
-        keywords: ['funny', 'smart']
-    },
-    {
-        id: 7,
-        keywords: ['funny', 'kids']
-    },
-    {
-        id: 8,
-        keywords: ['funny', 'movies', 'smart', 'mean']
-    },
-    {
-        id: 9,
-        keywords: ['funny', 'kids', 'mean', 'success']
-    },
-    {
-        id: 10,
-        keywords: ['happy', 'political', ]
-    },
-    {
-        id: 11,
-        keywords: ['happy', 'success', 'movies']
-    },
-    {
-        id: 12,
-        keywords: ['angry', 'smart', 'movies']
-    },
-    {
-        id: 13,
-        keywords: ['smart', 'angry', 'movies']
-    },
-    {
-        id: 14,
-        keywords: ['funny', 'smart', 'movies']
-    },
-    {
-        id: 15,
-        keywords: ['political', 'smart']
-    },
-    {
-        id: 16,
-        keywords: ['funny', 'movies', 'cute']
-    }
-];
+var gCanvas;
+var gCtx;
 
 var gMeme = {
     currImgId: 0,
@@ -182,4 +117,8 @@ function ClearAll() {
         line.txt = ''
     })
     gMeme.currLineIdx = 0
+}
+
+function setFilter(filterBy) {
+    gFilterBy = filterBy
 }

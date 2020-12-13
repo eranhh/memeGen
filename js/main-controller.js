@@ -1,6 +1,5 @@
 'use strict'
-var gCanvas;
-var gCtx;
+
 var gGalleryShow = document.querySelector('.gallery-section')
 var gMemesShow = document.querySelector('.memes-section')
 var gEditorShow = document.querySelector('.editor-section')
@@ -11,15 +10,9 @@ var gEditorLink = document.querySelector('.editor-link')
 function init() {
     gCanvas = document.getElementById('my-canvas')
     gCtx = gCanvas.getContext('2d')
+    gFilterBy = 'All'
     renderGallery()
-}
-
-function renderGallery() {
-    var imgs = gImgs
-    var strHtmls = imgs.map(function(img) {
-        return `<a href="#editor"><img src="img/${img.id}.jpg" onclick="onSetMemeImg('${img.id}'), displayEditor()"></a>`
-    });
-    document.querySelector('.gallery-images').innerHTML = strHtmls.join('')
+    renderKeywords()
 }
 
 function displayEditor() {
@@ -40,7 +33,6 @@ function displayGallery() {
     gGalleryLink.style.color = '#ebce70';
 }
 
-
 function displayMemes() {
     gEditorShow.style.display = 'none'
     gGalleryShow.style.display = 'none'
@@ -48,4 +40,53 @@ function displayMemes() {
     gGalleryLink.style.color = 'whitesmoke';
     gEditorLink.style.color = 'whitesmoke';
     gMemesLink.style.color = '#ebce70';
+}
+
+function renderGallery() {
+    var imgs = getImgsForDisplay()
+    var strHtmls = imgs.map(function(img) {
+        return `<a href="#editor"><img src="img/${img.id}.jpg" onclick="onSetMemeImg('${img.id}'); displayEditor();return false"></a>`
+    });
+    document.querySelector('.gallery-images').innerHTML = strHtmls.join('')
+}
+
+function renderKeywords() {
+    var keywords = keywordsToDisplay()
+    var strHtmls = keywords.map(function(keyword) {
+        var initialSize = 25 + keyword.count
+        return `<button style="font-size:${initialSize}px;" class="filter-btn ${keyword.keyword}" onclick="onSetFilter('${keyword.keyword}'),onIncreaseFontSize('${keyword.keyword}')">${keyword.keyword}</button>`;
+    })
+    document.querySelector('.keywords-bar').innerHTML = strHtmls.join('')
+}
+
+function onSetFilter(filterBy) {
+    setFilter(filterBy);
+    renderGallery();
+}
+
+function onIncreaseFontSize(txt) {
+    var keyIdx = gKeywords.findIndex(idx => idx.keyword === txt);
+    gKeywords[keyIdx].count++;
+    renderKeywords()
+}
+
+function onDisplayFilters() {
+    var elBtnText = document.querySelector('.filters-display-btn')
+    if (!gKeywordsFullDisplay) {
+        gKeywordsFullDisplay = true;
+        elBtnText.innerText = 'Less!'
+    } else {
+        gKeywordsFullDisplay = false;
+        elBtnText.innerText = 'More...'
+    }
+    renderKeywords()
+}
+
+function onOpenMenu() {
+    var elMenu = document.body.classList.toggle('menu-bar')
+    if (elMenu) {
+        document.querySelector('.menu-btn').innerText = 'X'
+    } else {
+        document.querySelector('.menu-btn').innerText = '☰'
+    }
 }

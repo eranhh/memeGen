@@ -3,12 +3,10 @@
 }
 
 
-/* FONTS */
+/* at Desktop Wide: */
 
-@font-face {
-    font-family: euro;
-    src: url(../fonts/eurof55.ttf);
-}
+
+/* FONTS */
 
 @font-face {
     font-family: nerko;
@@ -28,17 +26,48 @@
 
 /* BASE and MAIN */
 
-
-/* html {
-    scroll-behavior: smooth;
-} */
-
 body {
-    margin: 130px 0 0;
+    margin: 130px 0 0 0;
+    background-color: #fffbe9;
+}
+
+main {
+    min-height: 90vh;
+}
+
+.main-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    margin-top: 65px;
+}
+
+header {
+    background-color: rgb(64, 132, 149);
+    box-shadow: inset 0 -6px 0 rgb(64, 132, 149);
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    box-shadow: 0px 4px 10px 0px rgba(50, 50, 50, 0.4);
+    border-bottom: 1px solid rgb(64, 132, 149);
+}
+
+.header-layout {
+    max-width: 1200px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 canvas {
-    margin-left: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     border: 1px solid silver;
     background-color: rgb(248, 242, 233);
     border-radius: 0.2rem;
@@ -64,13 +93,10 @@ canvas {
     transform: scale(1.03);
 }
 
-.flex-container {
-    display: flex;
-    justify-content: center;
-    /* flex-direction: column; */
-}
-
 .editor-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     border-radius: 0.2rem;
     border: 1px solid silver;
     padding: 10px;
@@ -79,18 +105,7 @@ canvas {
     width: 500px;
     margin-left: 10px;
     margin-bottom: 20px;
-}
-
-header {
-    background-color: rgb(64, 132, 149);
-    box-shadow: inset 0 -6px 0 rgb(64, 132, 149);
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    display: flex;
-    box-shadow: 0px 4px 10px 0px rgba(50, 50, 50, 0.4);
-    border-bottom: 1px solid rgb(64, 132, 149);
+    margin-right: 10px;
 }
 
 header .logo {
@@ -146,19 +161,13 @@ header .logo {
     font-size: 2rem;
 }
 
-
-/* .gallery-container h1 {
-    background-color: blanchedalmond;
-    text-align: center;
-    font-family: nerko;
-    border-top: 1px solid rgb(64, 132, 149);
-    border-bottom: 1px solid rgb(64, 132, 149);
-} */
-
 footer {
+    margin-top: 50px;
     background-color: blanchedalmond;
     text-align: center;
-    height: 100%;
+    bottom: 0;
+    border-top: 1px solid rgb(238, 233, 217);
+    width: 100%;
 }
 
 footer p {
@@ -169,22 +178,11 @@ footer p {
 footer .logo {
     color: rgb(64, 132, 149);
     align-items: center;
-    /* flex-grow: 1; */
     font-size: 36px;
-    margin-left: 10px;
     font-family: dodko;
     font-weight: 500;
     letter-spacing: 1.8px;
 }
-
-
-/* .editor h1 {
-    background-color: blanchedalmond;
-    text-align: center;
-    font-family: nerko;
-    border-top: 1px solid rgb(64, 132, 149);
-    border-bottom: 1px solid rgb(64, 132, 149);
-} */
 
 .gallery-images {
     display: flex;
@@ -194,10 +192,10 @@ footer .logo {
 .gallery-images img {
     height: 200px;
     width: 200px;
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
     border: 1px solid silver;
     display: flex;
-    margin: 5px;
+    margin: 10px;
 }
 
 .gallery-images img:hover {
@@ -251,7 +249,7 @@ footer .logo {
 }
 
 select {
-    width: 130px;
+    width: 150px;
     height: 40px;
     border-radius: 0.3rem;
     border: 1px solid grey;
@@ -259,19 +257,161 @@ select {
 }
 
 .btns-sect1 {
+    display: flex;
+    justify-content: space-around;
     width: 100%;
     margin-bottom: 10px;
 }
 
 .btns-sect2 {
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 10px;
 }
 
 .btns-sect3 {
+    display: flex;
+    justify-content: space-evenly;
     margin-bottom: 10px;
+}
+
+.btns-sect3 button {
+    border: 2px solid rgb(102, 105, 107);
+    border-radius: 0.3rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgb(75, 75, 75);
+}
+
+.btns-sect3 button:hover {
+    border: 2px double rgb(64, 132, 149);
+}
+
+.btns-sect3 button:focus {
+    outline: none;
+    transform: scale(1.03);
+}
+
+.btns-sect4 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.btns-sect4 button {
+    background-color: rgb(64, 132, 149);
+    font-size: 1.5rem;
+    font-family: nerko;
+    color: rgb(250, 249, 243);
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+.btns-sect4 button:active {
+    color: #ebce70;
 }
 
 .href-btn a {
     color: inherit;
     text-decoration: none;
+}
+
+.filter-btn {
+    border: none;
+    background-color: #fffbe9;
+    font-family: dodko;
+    color: rgb(78, 80, 82);
+}
+
+.filter-btn:focus {
+    outline: none;
+}
+
+.filtering-sect {
+    display: flex;
+}
+
+.show-all-btn {
+    color: rgb(64, 132, 149);
+    border: none;
+    background-color: #fffbe9;
+    font-family: nerko;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.show-all-btn:focus {
+    outline: none;
+}
+
+.filters-display-btn {
+    color: rgb(64, 132, 149);
+    border: none;
+    background-color: #fffbe9;
+    font-family: nerko;
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+.filters-display-btn:focus {
+    outline: none;
+}
+
+.show-all-btn:active {
+    color: #ebce70
+}
+
+.filters-display-btn:active {
+    color: #ebce70
+}
+
+.memes-section h1 {
+    font-family: dodko;
+    font-size: 2rem;
+    color: rgb(103, 107, 116);
+}
+
+
+/* MEDIA QUERIES */
+
+
+/*Desktop*/
+
+@media (max-width: 1060px) {
+    .main-layout {
+        max-width: 980px;
+    }
+}
+
+
+/* Tablet */
+
+@media (max-width: 980px) {
+    .main-layout {
+        max-width: 760px;
+    }
+    .flex-container {
+        flex-direction: column;
+    }
+    canvas {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 760px) {
+    .main-layout {
+        max-width: 670px;
+    }
+    .gallery-images img {
+        height: 350px;
+        width: 350px;
+    }
+    /*   
+    footer {
+        display: none;
+    } */
 }
