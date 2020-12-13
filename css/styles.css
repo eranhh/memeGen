@@ -31,6 +31,10 @@ body {
     background-color: #fffbe9;
 }
 
+button {
+    cursor: pointer;
+}
+
 main {
     min-height: 90vh;
 }
@@ -306,6 +310,10 @@ select {
     color: rgb(250, 249, 243);
     padding: 10px;
     border-radius: 0.5rem;
+}
+
+.btns-sect4 button:hover {
+    color: #ebce70;
 }
 
 .btns-sect4 button:active {
