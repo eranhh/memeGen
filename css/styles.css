@@ -253,7 +253,7 @@ footer .logo {
 }
 
 select {
-    width: 150px;
+    width: 140px;
     height: 40px;
     border-radius: 0.3rem;
     border: 1px solid grey;
@@ -285,7 +285,7 @@ select {
     font-weight: bold;
     font-size: 1.2rem;
     color: rgb(75, 75, 75);
-    padding: 7px;
+    padding: 7px 12px;
 }
 
 .btns-sect3 button:hover {
@@ -328,6 +328,9 @@ select {
 
 .filtering-sect {
     display: flex;
+    padding: 5px;
+    border: 1.5px solid rgb(245, 229, 198);
+    border-radius: 0.4rem;
 }
 
 .filter-btn {
