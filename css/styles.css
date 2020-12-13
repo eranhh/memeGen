@@ -168,29 +168,6 @@ header .logo {
     font-size: 2rem;
 }
 
-footer {
-    margin-top: 50px;
-    background-color: blanchedalmond;
-    text-align: center;
-    bottom: 0;
-    border-top: 1px solid rgb(238, 233, 217);
-    width: 100%;
-}
-
-footer p {
-    margin-bottom: 0;
-    padding-bottom: 1rem;
-}
-
-footer .logo {
-    color: rgb(64, 132, 149);
-    align-items: center;
-    font-size: 36px;
-    font-family: dodko;
-    font-weight: 500;
-    letter-spacing: 1.8px;
-}
-
 .gallery-images {
     display: flex;
     flex-wrap: wrap;
@@ -255,12 +232,20 @@ footer .logo {
     border: 1px solid grey
 }
 
+.text-input:focus {
+    outline-color: #ebce70;
+}
+
 select {
     width: 140px;
     height: 40px;
     border-radius: 0.3rem;
     border: 1px solid grey;
     top: 0px;
+}
+
+select:focus {
+    outline-color: #ebce70;
 }
 
 .btns-sect1 {
@@ -293,11 +278,11 @@ select {
 
 .btns-sect3 button:hover {
     border: 2px double rgb(64, 132, 149);
+    transform: scale(1.03);
 }
 
 .btns-sect3 button:focus {
     outline: none;
-    transform: scale(1.03);
 }
 
 .btns-sect4 {
@@ -334,6 +319,8 @@ select {
     padding: 5px;
     border: 1.5px solid rgb(245, 229, 198);
     border-radius: 0.4rem;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .filter-btn {
@@ -383,9 +370,33 @@ select {
 }
 
 .memes-section h1 {
+    margin-left: 10px;
     font-family: dodko;
     font-size: 2rem;
     color: rgb(103, 107, 116);
+}
+
+footer {
+    margin-top: 50px;
+    background-color: blanchedalmond;
+    text-align: center;
+    bottom: 0;
+    border-top: 1px solid rgb(238, 233, 217);
+    width: 100%;
+}
+
+footer p {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+
+footer .logo {
+    color: rgb(64, 132, 149);
+    align-items: center;
+    font-size: 36px;
+    font-family: dodko;
+    font-weight: 500;
+    letter-spacing: 1.8px;
 }
 
 
