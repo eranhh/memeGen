@@ -173,6 +173,10 @@
      margin-right: 3px;
  }
  
+ .filters-inline {
+     display: flex;
+ }
+ 
  .filter-btn {
      border: none;
      background-color: #fffbe9;
@@ -192,6 +196,7 @@
      font-family: nerko;
      font-size: 1.2em;
      font-style: italic;
+     align-self: center;
  }
  
  .show-all-btn:focus {
@@ -205,6 +210,8 @@
      font-family: nerko;
      font-size: 1.1em;
      font-style: italic;
+     align-self: flex-end;
+     margin-bottom: 5px;
  }
  
  .filters-display-btn:focus {
