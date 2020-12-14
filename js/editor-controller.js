@@ -12,7 +12,7 @@ function renderMemeToCanvas() {
 }
 
 function drawText(text, x, y) {
-    gCtx.lineWidth = '1.5'
+    gCtx.lineWidth = '1.25'
     gCtx.strokeStyle = gMeme.lines[gMeme.currLineIdx].stroke
     gCtx.fillStyle = gMeme.lines[gMeme.currLineIdx].color
     gCtx.font = `${gMeme.lines[gMeme.currLineIdx].size}px ${gMeme.lines[gMeme.currLineIdx].font}`
@@ -45,6 +45,7 @@ function onChangeAlign(align) {
 
 function onChangeFontSize(diff) {
     changeFontSize(diff)
+        // drawText(gMeme.lines[gMeme.currLineIdx].txt, gMeme.lines[gMeme.currLineIdx].x, gMeme.lines[gMeme.currLineIdx].y)
     renderMemeToCanvas()
 }
 

@@ -149,8 +149,8 @@
  .gallery-images img {
      display: flex;
      margin: 10px 5px;
-     width: 280px;
-     height: 280px;
+     width: 250px;
+     height: 250px;
      /* align-items: center; */
      flex-basis: 25%;
      flex-grow: 1;
@@ -460,5 +460,8 @@
      .editor-icon {
          width: 25px;
          height: 25px;
+     }
+     .filters-inline {
+         display: flex;
      }
  }
