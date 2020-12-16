@@ -24,6 +24,7 @@ function displayEditor() {
     gMemesLink.style.color = 'whitesmoke';
     gEditorLink.style.color = '#ebce70';
     gTextInput.focus()
+    window.scrollTo(0, 0)
 }
 
 function displayGallery() {
@@ -33,6 +34,7 @@ function displayGallery() {
     gMemesLink.style.color = 'whitesmoke';
     gEditorLink.style.color = 'whitesmoke';
     gGalleryLink.style.color = '#ebce70';
+    window.scrollTo(0, 0)
 }
 
 function displayMemes() {
@@ -42,6 +44,7 @@ function displayMemes() {
     gGalleryLink.style.color = 'whitesmoke';
     gEditorLink.style.color = 'whitesmoke';
     gMemesLink.style.color = '#ebce70';
+    window.scrollTo(0, 0)
 }
 
 function renderGallery() {

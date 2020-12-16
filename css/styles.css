@@ -6,7 +6,7 @@
  
  @font-face {
      font-family: impact;
-     src: url(../fonts/impact.ttf);
+     src: url(../fonts/uni.ttf);
  }
  
  @font-face {
@@ -87,20 +87,21 @@
      justify-content: center;
  }
  
- .main-nav li:active {
+ .main-nav span:active {
      color: #ebce70;
  }
  
- .main-nav a {
+ .main-nav span {
      text-decoration: none;
      color: whitesmoke;
      align-items: center;
      flex-grow: 1;
      font-family: dodko;
      font-size: 1.5rem;
+     cursor: pointer;
  }
  
- .main-nav a:hover {
+ .main-nav span:hover {
      text-decoration: none;
      color: #ebce70;
      transform: scale(1.08);

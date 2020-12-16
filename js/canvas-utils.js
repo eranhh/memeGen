@@ -5,10 +5,10 @@ function getRandomInteger(min, max) {
 }
 
 
-function plusOrMinus() {
-    const plusOrMinus = (getRandomInt(0, 2) > 0.5) ? 1 : -1;
-    return plusOrMinus;
-}
+// function plusOrMinus() {
+//     const plusOrMinus = (getRandomInt(0, 2) > 0.5) ? 1 : -1;
+//     return plusOrMinus;
+// }
 
 function clearCanvas() {
     gCtx.clearRect(0, 0, gCanvas.width, gCanvas.height)

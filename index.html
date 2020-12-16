@@ -10,33 +10,33 @@
 </head>
 
 <body onload="init()">
-    <div class="main-screen" onclick="onOpenMenu()"></div>
+    <!-- <div class="main-screen" onclick="onOpenMenu()"></div> -->
     <Header>
         <div class="flex header-layout">
             <div class="logo flex align-center">MeMuse~</div>
             <ul class="main-nav align-center space-between justify-center clean-list ">
-                <li><a href="#gallery" onclick="displayGallery(); return false" class="gallery-link">Gallery</a></li>
-                <li><a href="#editor" onclick="displayEditor();return false" class="editor-link">Editor</a></li>
-                <li><a href="#memes" onclick="displayMemes();return false" class="memes-link">Memes</a></li>
+                <li><span onclick="displayGallery();" class="gallery-link">Gallery</span></li>
+                <li><span onclick="displayEditor();" class="editor-link">Editor</span></li>
+                <li><span onclick="displayMemes();" class="memes-link">Memes</span></li>
             </ul>
-            <button class="menu-btn" onclick="onOpenMenu()">☰</button>
+            <!-- <button class="menu-btn" onclick="onOpenMenu()">☰</button> -->
         </div>
     </Header>
     <main class="main-layout">
         <div class="wrapper">
             <div class="main-screen" onclick="onOpenMenu()"></div>
-            <section id="gallery" class="gallery-section">
+            <section class="gallery-section">
                 <div class="gallery-container">
                     <div class="filtering-sect">
                         <button class="show-all-btn" onclick="onSetFilter('All')">Show All</button>
                         <div class="filters-inline">
-                            <div class="keywords-bar" style="display:inline"></div><button class="filters-display-btn" onclick="onDisplayFilters()">More...</button>
+                            <div class="keywords-bar"></div><button class="filters-display-btn" onclick="onDisplayFilters()">More...</button>
                         </div>
                     </div>
                     <div class="gallery-images"></div>
                 </div>
             </section>
-            <section id="editor" class="editor-section ">
+            <section class="editor-section ">
                 <div class="flex-container">
                     <div class="canvas-container">
                         <canvas id="my-canvas" height="500" width="500"></canvas>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </section>
-            <section id="memes" class="memes-section">
+            <section class="memes-section">
                 <div class="memes-container"></div>
                 <h1>Here are the memes you created...</h1>
             </section>

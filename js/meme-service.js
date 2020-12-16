@@ -112,7 +112,7 @@ function findNextLineIdx() {
     gMeme.currLineIdx = gMeme.currLineIdx + 1
 }
 
-function ClearAll() {
+function clearAll() {
     gMeme.lines.forEach(function(line) {
         line.txt = ''
     })

@@ -6,17 +6,17 @@ function renderMemeToCanvas() {
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xend,yend
         gMeme.lines.forEach(function(line) {
-            drawText(line.txt, line.x, line.y)
+            drawText(line.txt, line.x, line.y, line)
         })
     }
 }
 
-function drawText(text, x, y) {
+function drawText(text, x, y, line) {
     gCtx.lineWidth = '1.25'
-    gCtx.strokeStyle = gMeme.lines[gMeme.currLineIdx].stroke
-    gCtx.fillStyle = gMeme.lines[gMeme.currLineIdx].color
-    gCtx.font = `${gMeme.lines[gMeme.currLineIdx].size}px ${gMeme.lines[gMeme.currLineIdx].font}`
-    gCtx.textAlign = gMeme.lines[gMeme.currLineIdx].align
+    gCtx.strokeStyle = line.stroke
+    gCtx.fillStyle = line.color
+    gCtx.font = `${line.size}px ${line.font}`
+    gCtx.textAlign = line.align
     gCtx.fillText(text, x, y)
     gCtx.strokeText(text, x, y)
 }
