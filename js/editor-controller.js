@@ -45,7 +45,6 @@ function onChangeAlign(align) {
 
 function onChangeFontSize(diff) {
     changeFontSize(diff)
-        // drawText(gMeme.lines[gMeme.currLineIdx].txt, gMeme.lines[gMeme.currLineIdx].x, gMeme.lines[gMeme.currLineIdx].y)
     renderMemeToCanvas()
 }
 
@@ -103,7 +102,7 @@ function goToNextLine() {
 
 function onClearAll() {
     if (confirm('Are you sure?')) {
-        ClearAll()
+        clearAll()
         renderMemeToCanvas()
         var textInput = document.querySelector('#text-input')
         textInput.value = gMeme.lines[gMeme.currLineIdx].txt
@@ -113,10 +112,6 @@ function onClearAll() {
 function onDownload(elLink) {
     downloadCanvas(elLink)
 }
-
-
-
-
 
 
 

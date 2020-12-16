@@ -48,14 +48,15 @@
                             <button title="Clear current line" class="btn-editor" onclick="onClearText()"><img class="editor-icon" src="Icons/trash.png"></button>
                             <button title="Go to bottom/top line" class="btn-editor" onclick="onSwitchZone()"><img class="editor-icon"
                             src="Icons/up-and-down-arrows.png"></button>
-                            <button title="Move line upwards" class="btn-editor" onclick="onMoveLine(-1)"><img class="editor-icon"
-                            src="Icons/double-arrow-up.png"></button>
-                            <button title="Move line downwards" class="btn-editor" onclick="onMoveLine(+1)"><img class="editor-icon"
-                            src="Icons/double-arrow-down.png"></button>
                             <button title="Go to previous line" class="btn-editor" onclick="goToPrevLine()"><img class="editor-icon"
                                 src="Icons/backwards-arrow.png"></button>
                             <button title="Go to next line" class="btn-editor" onclick="goToNextLine()"><img class="editor-icon"
                             src="Icons/forwards-arrow.png"></button>
+                            <button title="Move line upwards" class="btn-editor" onclick="onMoveLine(-1)"><img class="editor-icon"
+                            src="Icons/double-arrow-up.png"></button>
+                            <button title="Move line downwards" class="btn-editor" onclick="onMoveLine(+1)"><img class="editor-icon"
+                            src="Icons/double-arrow-down.png"></button>
+
                         </div>
                         <div class="btns-sect2">
                             <button title="Align line to right" class="btn-editor" onclick="onChangeAlign('left')"><img class="editor-icon"
@@ -83,7 +84,7 @@
                             <button title="Clear all text" onclick="onClearAll()">Clear All</button>
                         </div>
                         <div class="btns-sect4">
-                            <button class="href-btn"><a href="#" onclick="onDownload(this)" download="">Download</a></button>
+                            <button title="Download to your device" class="href-btn"><a href="#" onclick="onDownload(this)" download="">Download</a></button>
                             <button title="Display on Memes page" onclick="onSaveMeme()">Save</button>
                             <button title="Post on Facebook">Share</button>
                         </div>

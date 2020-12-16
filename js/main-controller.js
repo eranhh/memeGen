@@ -23,7 +23,7 @@ function displayEditor() {
     gGalleryLink.style.color = 'whitesmoke';
     gMemesLink.style.color = 'whitesmoke';
     gEditorLink.style.color = '#ebce70';
-    gTextInput.focus()
+    // gTextInput.focus()
     window.scrollTo(0, 0)
 }
 
